@@ -3,6 +3,10 @@ cmake_minimum_required (VERSION 2.8)
 # ---------- LuaLib ----------
 project ( LuaLib )
 
+IF (${MSVC})
+	ADD_DEFINITIONS(/D "_CRT_SECURE_NO_WARNINGS")
+ENDIF(${MSVC})
+
 SET( LUA_SRCS "${PROJECT_SOURCE_DIR}/src" )
 
 SET ( INCLUDES
